@@ -2,45 +2,47 @@ import { ArrowUpRight, Award, BookOpenCheck, Github } from "lucide-react";
 
 import { SeparatedMeta } from "../../../shared/components/SeparatedMeta";
 import { StackPills } from "../../../shared/components/StackPills";
+import type { HomeContent } from "../homeContent";
 import { credentials, professionalProof } from "../homeData";
 
-export function ProofSection() {
+export function ProofSection({ content }: { content: HomeContent["proof"] }) {
   return (
     <section id="proof" className="border-y border-paper/15 bg-[#11110f] px-5 py-24 md:px-10 md:py-36">
       <div className="mx-auto max-w-[1500px]">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
             <p className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-acid">
-              <BookOpenCheck size={16} /> Proof of work
+              <BookOpenCheck size={16} /> {content.eyebrow}
             </p>
             <h2 className="font-display text-5xl font-bold uppercase leading-none tracking-[-0.06em] md:text-8xl">
-              Production work.
-              <span className="block text-paper/25">Validated learning.</span>
+              {content.titleTop}
+              <span className="block text-paper/25">{content.titleBottom}</span>
             </h2>
           </div>
           <p className="max-w-lg border-t border-paper/15 pt-6 text-sm leading-relaxed text-paper/55 md:col-span-4 md:col-start-9">
-            A mix of production systems, confidential backoffice delivery, a
-            critical web product, and structured Dicoding learning paths.
+            {content.description}
           </p>
         </div>
 
         <div className="mt-16 grid gap-5 lg:grid-cols-2">
-          {professionalProof.map((item) => (
+          {professionalProof.map((item, index) => {
+            const copy = content.professional[index];
+            return (
             <article
               key={item.title}
               className="flex min-h-[460px] flex-col border border-paper/15 bg-ink p-7 transition duration-500 hover:border-orange/70"
             >
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange">
-                {item.label}
+                {copy.label}
               </span>
               <h3 className="mt-5 font-display text-3xl font-bold uppercase leading-none tracking-[-0.04em] md:text-5xl">
-                {item.title}
+                {copy.title}
               </h3>
               <p className="mt-6 max-w-2xl text-sm leading-relaxed text-paper/60">
-                {item.description}
+                {copy.description}
               </p>
 
-              <SeparatedMeta items={item.highlights} />
+              <SeparatedMeta items={copy.highlights} />
 
               <div className="mt-auto pt-10">
                 <StackPills stacks={item.stacks} />
@@ -52,20 +54,23 @@ export function ProofSection() {
                     rel="noreferrer"
                     className="mt-10 inline-flex items-center gap-2 rounded-full bg-paper px-4 py-2 text-xs font-bold uppercase tracking-wider text-ink transition hover:bg-acid"
                   >
-                    Open website <ArrowUpRight size={15} />
+                    {content.openWebsite} <ArrowUpRight size={15} />
                   </a>
                 ) : (
                   <span className="mt-10 inline-flex items-center rounded-full border border-paper/20 px-4 py-2 text-xs font-bold uppercase tracking-wider text-paper/50">
-                    Confidential work
+                    {content.confidentialWork}
                   </span>
                 )}
               </div>
             </article>
-          ))}
+          );
+          })}
         </div>
 
         <div className="mt-5 grid gap-5 lg:grid-cols-2">
-          {credentials.map((credential) => (
+          {credentials.map((credential, index) => {
+            const copy = content.credentials[index];
+            return (
             <article
               key={credential.title}
               className="group relative flex min-h-[460px] flex-col overflow-hidden border border-paper/15 p-7 transition duration-500 hover:border-acid/70"
@@ -74,14 +79,14 @@ export function ProofSection() {
                 <div>
                   <div className="flex flex-wrap items-center gap-3">
                     <span className={`text-xs font-bold uppercase tracking-[0.2em] ${credential.accent}`}>
-                      {credential.provider}
+                      {copy.provider}
                     </span>
                     <span className="border border-paper/20 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-paper/50">
-                      {credential.status}
+                      {copy.status}
                     </span>
                   </div>
                   <h3 className="mt-5 max-w-xl font-display text-4xl font-bold uppercase leading-[0.95] tracking-[-0.05em] md:text-5xl">
-                    {credential.title}
+                    {copy.title}
                   </h3>
                 </div>
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-paper/20 text-acid transition group-hover:scale-110">
@@ -90,10 +95,10 @@ export function ProofSection() {
               </div>
 
               <p className="mt-8 max-w-xl text-sm leading-relaxed text-paper/60">
-                {credential.description}
+                {copy.description}
               </p>
 
-              <SeparatedMeta items={credential.topics} />
+              <SeparatedMeta items={copy.topics} />
 
               <div className="mt-auto pt-10">
                 <StackPills stacks={credential.stacks} />
@@ -105,7 +110,7 @@ export function ProofSection() {
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-full bg-paper px-4 py-2 text-xs font-bold uppercase tracking-wider text-ink transition hover:bg-acid"
                   >
-                    <Github size={15} /> GitHub repo
+                    <Github size={15} /> {content.githubRepo}
                   </a>
                   <a
                     href={credential.certificateHref}
@@ -113,12 +118,13 @@ export function ProofSection() {
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-full border border-paper/25 px-4 py-2 text-xs font-bold uppercase tracking-wider text-paper transition hover:border-orange hover:bg-orange hover:text-ink"
                   >
-                    Certificate <ArrowUpRight size={15} />
+                    {content.certificate} <ArrowUpRight size={15} />
                   </a>
                 </div>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

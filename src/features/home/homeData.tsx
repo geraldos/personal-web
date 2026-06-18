@@ -155,9 +155,3 @@ export const professionalProof = [
     websiteHref: "https://m2u.maybank.co.id/",
   },
 ];
-
-export const principles: Array<[string, string, string]> = [
-  ["01", "Think clearly", "Understanding the problem before committing to a solution."],
-  ["02", "Build thoughtfully", "Writing maintainable code with attention to every detail."],
-  ["03", "Learn continuously", "Staying adaptable through deliberate, hands-on learning."],
-];

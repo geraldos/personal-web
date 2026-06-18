@@ -1,8 +1,14 @@
+"use client";
+
+import { useState } from "react";
+import { useEffect } from "react";
+
 import { calculateYearsOfExperience, getCurrentYear } from "../../shared/lib/date";
 import { FloatingWhatsappButton } from "./components/FloatingWhatsappButton";
 import { SiteHeader } from "./components/SiteHeader";
 import { SkillMarquee } from "./components/SkillMarquee";
-import { principles, profile, skills } from "./homeData";
+import { homeContent, type LanguageCode } from "./homeContent";
+import { profile, skills } from "./homeData";
 import { AboutSection } from "./sections/AboutSection";
 import { FooterSection } from "./sections/FooterSection";
 import { HeroSection } from "./sections/HeroSection";
@@ -11,6 +17,21 @@ import { ProofSection } from "./sections/ProofSection";
 import { WorkSection } from "./sections/WorkSection";
 
 export function HomePage({ currentDate = new Date() }: { currentDate?: Date }) {
+  const [language, setLanguage] = useState<LanguageCode>("en");
+  const content = homeContent[language];
+
+  useEffect(() => {
+    const browserLanguage = navigator.language.toLowerCase();
+
+    if (browserLanguage.startsWith("ja")) {
+      setLanguage("ja");
+      return;
+    }
+
+    if (browserLanguage.startsWith("id")) {
+      setLanguage("id");
+    }
+  }, []);
   const yearsOfExperience = calculateYearsOfExperience(
     profile.careerStartDate,
     currentDate,
@@ -19,15 +40,21 @@ export function HomePage({ currentDate = new Date() }: { currentDate?: Date }) {
   return (
     <main id="top" className="overflow-hidden">
       <div className="noise" />
-      <SiteHeader whatsappHref={profile.whatsappHref} />
+      <SiteHeader
+        activeLanguage={language}
+        labels={content.nav}
+        onLanguageChange={setLanguage}
+        whatsappHref={profile.whatsappHref}
+      />
       <FloatingWhatsappButton whatsappHref={profile.whatsappHref} />
-      <HeroSection yearsOfExperience={yearsOfExperience} />
+      <HeroSection content={content.hero} yearsOfExperience={yearsOfExperience} />
       <SkillMarquee skills={skills} />
-      <AboutSection principles={principles} />
-      <ProofSection />
-      <WorkSection />
-      <ProcessSection />
+      <AboutSection content={content.about} />
+      <ProofSection content={content.proof} />
+      <WorkSection content={content.work} />
+      <ProcessSection content={content.process} />
       <FooterSection
+        content={content.footer}
         currentYear={getCurrentYear(currentDate)}
         email={profile.email}
         githubHref={profile.githubHref}
