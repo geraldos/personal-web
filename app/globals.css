@@ -51,6 +51,7 @@ body {
 
 .ticker {
   animation: ticker 28s linear infinite;
+  will-change: transform;
 }
 
 .float {
@@ -75,6 +76,9 @@ body {
 }
 
 @keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
   to {
     transform: translateX(-50%);
   }
@@ -97,9 +101,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  html {
     scroll-behavior: auto !important;
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
   }
 }

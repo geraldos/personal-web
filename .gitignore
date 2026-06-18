@@ -2,6 +2,8 @@ node_modules
 .next
 out
 dist
+storybook-static
+tsconfig.tsbuildinfo
 
 .env
 .env*.local
