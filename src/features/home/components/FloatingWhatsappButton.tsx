@@ -7,9 +7,9 @@ export function FloatingWhatsappButton({ whatsappHref }: { whatsappHref: string 
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-acid text-ink shadow-[0_18px_45px_rgba(0,0,0,0.35)] transition hover:scale-110 md:bottom-8 md:right-8 md:h-16 md:w-16"
+      className="fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-acid text-paper shadow-[0_18px_45px_rgba(0,0,0,0.35)] transition hover:scale-110 md:bottom-8 md:right-8 md:h-16 md:w-16"
     >
-      <SiWhatsapp className="h-7 w-7 md:h-8 md:w-8" aria-hidden="true" />
+      <SiWhatsapp className="h-6 w-6 md:h-8 md:w-8" aria-hidden="true" />
     </a>
   );
 }

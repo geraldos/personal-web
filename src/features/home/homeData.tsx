@@ -61,7 +61,7 @@ export const projects = [
     description:
       "Building polished, responsive interfaces that balance product goals, performance, and maintainable code.",
     tags: ["React", "Vue", "UI Engineering"],
-    color: "bg-acid text-ink",
+    color: "bg-acid text-paper",
     icon: Sparkles,
   },
   {
@@ -70,7 +70,7 @@ export const projects = [
     description:
       "Connecting thoughtful frontends to reliable backend services to deliver complete, scalable applications.",
     tags: ["Node.js", "Spring Boot", "API"],
-    color: "bg-orange text-ink",
+    color: "bg-acid text-paper",
     icon: Code2,
   },
   {
@@ -79,7 +79,7 @@ export const projects = [
     description:
       "Exploring new technologies through focused prototypes, technical research, and deliberate experimentation.",
     tags: ["AI", "Prototypes", "Research"],
-    color: "bg-paper text-ink",
+    color: "bg-acid text-paper",
     icon: Braces,
   },
 ];
@@ -122,7 +122,7 @@ export const credentials = [
     ],
     repoHref: "https://github.com/geraldos/forum-api",
     certificateHref: "https://www.dicoding.com/certificates/L4PQEJ2EQPO1",
-    accent: "text-orange",
+    accent: "text-acid",
   },
 ];
 

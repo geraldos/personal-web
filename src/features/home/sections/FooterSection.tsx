@@ -18,7 +18,7 @@ export function FooterSection({
   whatsappHref: string;
 }) {
   return (
-    <footer id="contact" className="relative bg-acid px-5 pb-8 pt-24 text-ink md:px-10 md:pt-36">
+    <footer id="contact" className="relative bg-acid px-5 pb-8 pt-24 text-paper md:px-10 md:pt-36">
       <div className="mx-auto max-w-[1500px]">
         <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em]">{content.eyebrow}</p>
         <a href={whatsappHref} target="_blank" rel="noreferrer" className="group block">
@@ -30,9 +30,9 @@ export function FooterSection({
           </h2>
         </a>
 
-        <div className="mt-24 grid gap-8 border-t border-ink/25 pt-8 text-xs uppercase tracking-wider md:grid-cols-3">
+        <div className="mt-12 grid gap-8 border-t border-paper/25 pt-8 text-xs uppercase tracking-wider md:mt-24 md:grid-cols-3">
           <div>
-            <span className="block text-ink/45">{content.contact}</span>
+            <span className="block text-paper/55">{content.contact}</span>
             <a
               className="mt-2 inline-flex items-center gap-2 font-bold hover:underline"
               href={`mailto:${email}`}
@@ -61,7 +61,7 @@ export function FooterSection({
             </a>
           </div>
           <div className="md:text-right">
-            <span className="block text-ink/45">{content.credit}</span>
+            <span className="block text-paper/55">{content.credit}</span>
             <span className="mt-2 block font-bold">Geraldo © {currentYear}</span>
           </div>
         </div>

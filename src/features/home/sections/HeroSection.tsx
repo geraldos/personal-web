@@ -6,11 +6,11 @@ export function HeroSection({
   content,
   yearsOfExperience,
 }: {
-  content: HomeContent["hero"];
+  content: Omit<HomeContent["hero"], "intro"> & { intro: string };
   yearsOfExperience: number;
 }) {
   return (
-    <section className="grid-lines relative min-h-screen px-5 pb-16 pt-32 md:px-10 md:pt-40">
+    <section className="grid-lines relative min-h-screen bg-ink px-5 pb-16 pt-32 text-paper md:px-10 md:pt-40">
       <div className="mx-auto max-w-[1500px]">
         <div className="mb-8 flex items-center justify-between text-[10px] uppercase tracking-[0.22em] text-paper/55 md:text-xs">
           <span>{content.location}</span>
@@ -24,11 +24,11 @@ export function HeroSection({
           <p className="mb-3 font-display text-lg font-bold uppercase text-acid md:text-2xl">
             {content.intro}
           </p>
-          <h1 className="font-display text-[17vw] font-bold uppercase leading-[0.75] tracking-[-0.085em] md:text-[13vw]">
+          <h1 className="cjk-hero-title font-display text-[15vw] font-bold uppercase leading-[0.75] tracking-[-0.085em] sm:text-[17vw] md:text-[13vw]">
             {content.titleTop}
           </h1>
           <div className="flex items-center">
-            <h1 className="outline-text font-display text-[17vw] font-bold uppercase leading-[0.82] tracking-[-0.085em] md:text-[13vw]">
+            <h1 className="cjk-hero-title outline-text font-display text-[15vw] font-bold uppercase leading-[0.82] tracking-[-0.085em] sm:text-[17vw] md:text-[13vw]">
               {content.titleBottom}
             </h1>
             <Asterisk
@@ -46,7 +46,7 @@ export function HeroSection({
             <div className="flex gap-3 md:col-span-2 md:justify-end">
               <a
                 href="#work"
-                className="group flex h-16 w-16 items-center justify-center rounded-full bg-acid text-ink transition hover:scale-110 md:h-20 md:w-20"
+                className="group flex h-16 w-16 items-center justify-center rounded-full bg-acid text-paper transition hover:scale-110 md:h-20 md:w-20"
                 aria-label={content.workLinkLabel}
               >
                 <ArrowDownRight className="transition group-hover:rotate-[-45deg]" />
@@ -63,7 +63,9 @@ export function HeroSection({
             </div>
             <div className="border-l border-paper/20 pl-6">
               <span className="block text-paper/40">{content.focusLabel}</span>
-              <strong className="mt-2 block font-display text-2xl">{content.focusValue}</strong>
+              <strong className="mt-2 block break-words font-display text-lg leading-tight sm:text-2xl">
+                {content.focusValue}
+              </strong>
             </div>
           </div>
         </div>

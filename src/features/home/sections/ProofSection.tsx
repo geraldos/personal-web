@@ -7,14 +7,14 @@ import { credentials, professionalProof } from "../homeData";
 
 export function ProofSection({ content }: { content: HomeContent["proof"] }) {
   return (
-    <section id="proof" className="border-y border-paper/15 bg-[#11110f] px-5 py-24 md:px-10 md:py-36">
+    <section id="proof" className="border-y border-paper/15 bg-ink px-5 py-24 md:px-10 md:py-36">
       <div className="mx-auto max-w-[1500px]">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
             <p className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-acid">
               <BookOpenCheck size={16} /> {content.eyebrow}
             </p>
-            <h2 className="font-display text-5xl font-bold uppercase leading-none tracking-[-0.06em] md:text-8xl">
+            <h2 className="font-display text-4xl font-bold uppercase leading-none tracking-[-0.06em] sm:text-5xl lg:text-8xl">
               {content.titleTop}
               <span className="block text-paper/25">{content.titleBottom}</span>
             </h2>
@@ -30,9 +30,9 @@ export function ProofSection({ content }: { content: HomeContent["proof"] }) {
             return (
             <article
               key={item.title}
-              className="flex min-h-[460px] flex-col border border-paper/15 bg-ink p-7 transition duration-500 hover:border-orange/70"
+              className="flex min-h-[460px] flex-col rounded-3xl border border-paper/15 bg-ink p-7 pr-16 transition duration-500 hover:border-acid/70 sm:pr-7"
             >
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-orange">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-acid">
                 {copy.label}
               </span>
               <h3 className="mt-5 font-display text-3xl font-bold uppercase leading-none tracking-[-0.04em] md:text-5xl">
@@ -73,7 +73,7 @@ export function ProofSection({ content }: { content: HomeContent["proof"] }) {
             return (
             <article
               key={credential.title}
-              className="group relative flex min-h-[460px] flex-col overflow-hidden border border-paper/15 p-7 transition duration-500 hover:border-acid/70"
+              className="group relative flex min-h-[460px] flex-col overflow-hidden rounded-3xl border border-paper/15 p-7 pr-16 transition duration-500 hover:border-acid/70 sm:pr-7"
             >
               <div className="flex items-start justify-between gap-6">
                 <div>
@@ -116,7 +116,7 @@ export function ProofSection({ content }: { content: HomeContent["proof"] }) {
                     href={credential.certificateHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-paper/25 px-4 py-2 text-xs font-bold uppercase tracking-wider text-paper transition hover:border-orange hover:bg-orange hover:text-ink"
+                    className="inline-flex items-center gap-2 rounded-full border border-paper/25 px-4 py-2 text-xs font-bold uppercase tracking-wider text-paper transition hover:border-acid hover:bg-acid hover:text-ink"
                   >
                     {content.certificate} <ArrowUpRight size={15} />
                   </a>

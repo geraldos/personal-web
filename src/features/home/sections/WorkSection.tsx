@@ -10,11 +10,11 @@ export function WorkSection({ content }: { content: HomeContent["work"] }) {
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-acid">
               {content.eyebrow}
             </p>
-            <h2 className="font-display text-5xl font-bold uppercase leading-none tracking-[-0.06em] md:text-8xl">
+            <h2 className="font-display text-5xl font-bold uppercase leading-none tracking-[-0.06em] lg:text-8xl">
               {content.title}
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-paper/50">
+          <p className="page-copy max-w-sm text-sm leading-relaxed">
             {content.description}
           </p>
         </div>

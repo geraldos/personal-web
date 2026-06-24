@@ -3,9 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --ink: #0a0a09;
-  --paper: #f1eee7;
-  --acid: #c7ff32;
+  --color-ink: 10 18 32;
+  --color-paper: 241 245 249;
+  --color-acid: 96 165 250;
+  --page-background: rgb(var(--color-ink));
+  --page-foreground: rgb(var(--color-paper));
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --color-ink: 248 250 252;
+  --color-paper: 15 23 42;
+  --color-acid: 96 165 250;
+  --page-background: rgb(var(--color-ink));
+  --page-foreground: rgb(var(--color-paper));
+  color-scheme: light;
 }
 
 * {
@@ -18,14 +30,15 @@ html {
 
 body {
   margin: 0;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--page-background);
+  color: var(--page-foreground);
   font-family: var(--font-space), monospace;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 ::selection {
-  background: var(--acid);
-  color: var(--ink);
+  background: rgb(var(--color-acid));
+  color: rgb(var(--color-ink));
 }
 
 .noise {
@@ -39,19 +52,62 @@ body {
 
 .outline-text {
   color: transparent;
-  -webkit-text-stroke: 1px rgba(241, 238, 231, 0.55);
+  -webkit-text-stroke: 1px rgb(var(--color-paper) / 0.55);
 }
 
 .grid-lines {
   background-image:
-    linear-gradient(rgba(241, 238, 231, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(241, 238, 231, 0.06) 1px, transparent 1px);
+    linear-gradient(rgb(var(--color-paper) / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--color-paper) / 0.06) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 
 .ticker {
   animation: ticker 28s linear infinite;
   will-change: transform;
+}
+
+.page-copy {
+  color: rgb(var(--page-foreground) / 0.6);
+}
+
+[data-language="ja"] {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+}
+
+[data-language="zh"] {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+[data-language="ja"] .font-display,
+[data-language="zh"] .font-display {
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+[data-language="ja"] .uppercase,
+[data-language="zh"] .uppercase {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+[data-language="ja"] :is(p, h1, h2, h3, strong, span),
+[data-language="zh"] :is(p, h1, h2, h3, strong, span) {
+  overflow-wrap: anywhere;
+}
+
+[data-language="ja"] .cjk-hero-title {
+  font-size: clamp(3rem, 12vw, 9rem);
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+}
+
+[data-language="zh"] .cjk-hero-title {
+  font-size: clamp(4rem, 13vw, 10rem);
+  letter-spacing: -0.06em;
+  line-height: 1.05;
 }
 
 .float {
