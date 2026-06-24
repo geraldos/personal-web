@@ -5,10 +5,12 @@ import {
   SiEslint,
   SiExpress,
   SiFastify,
+  SiFlutter,
   SiJavascript,
   SiJest,
   SiJsonwebtokens,
   SiMui,
+  SiMariadb,
   SiNodedotjs,
   SiNodemon,
   SiPostgresql,
@@ -39,6 +41,7 @@ export const skills = [
   { name: "TypeScript", icon: SiTypescript },
   { name: "React", icon: SiReact },
   { name: "Vue", icon: SiVuedotjs },
+  { name: "Flutter", icon: SiFlutter },
   { name: "Tailwind CSS", icon: SiTailwindcss },
   { name: "Material UI", icon: SiMui },
   { name: "Storybook", icon: SiStorybook },
@@ -50,6 +53,8 @@ export const skills = [
   { name: "Fastify", icon: SiFastify },
   { name: "Express", icon: SiExpress },
   { name: "Spring Boot", icon: SiSpringboot },
+  { name: "MariaDB", icon: SiMariadb },
+  { name: "Db2", icon: Database },
   { name: "PostgreSQL", icon: SiPostgresql },
   { name: "SQL", icon: Database },
 ];
@@ -82,6 +87,21 @@ export const projects = [
     color: "bg-acid text-paper",
     icon: Braces,
   },
+];
+
+export const experienceStacks = [
+  [
+    { name: "React", icon: SiReact },
+    { name: "Spring Boot", icon: SiSpringboot },
+    { name: "Thymeleaf", icon: SiThymeleaf },
+    { name: "Db2", icon: Database },
+    { name: "PostgreSQL", icon: SiPostgresql },
+    { name: "SQL", icon: Database },
+  ],
+  [
+    { name: "Flutter", icon: SiFlutter },
+    { name: "Vue", icon: SiVuedotjs },
+  ],
 ];
 
 export const credentials = [

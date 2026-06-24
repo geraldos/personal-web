@@ -1,6 +1,8 @@
 import { BriefcaseBusiness, Landmark, MapPin, PanelsTopLeft } from "lucide-react";
 
+import { StackPills } from "../../../shared/components/StackPills";
 import type { ExperienceContent } from "../experienceContent";
+import { experienceStacks } from "../homeData";
 
 export function ExperienceSection({ content }: { content: ExperienceContent }) {
   return (
@@ -51,6 +53,9 @@ export function ExperienceSection({ content }: { content: ExperienceContent }) {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-8 border-t border-paper/15 pt-6">
+                  <StackPills stacks={experienceStacks[index]} />
+                </div>
               </article>
             </li>
           ))}
