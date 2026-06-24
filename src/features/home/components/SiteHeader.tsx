@@ -72,6 +72,12 @@ export function SiteHeader({
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const activeLanguageName = languages.find((language) => language.code === activeLanguage)?.name;
+  const experienceLabel = {
+    en: "Experience",
+    id: "Pengalaman",
+    ja: "職務経歴",
+    zh: "工作经历",
+  }[activeLanguage];
 
   return (
     <nav className="fixed inset-x-0 top-0 z-40 border-b border-paper/15 bg-ink/80 px-4 py-3 backdrop-blur-xl lg:px-10 lg:py-4">
@@ -80,6 +86,9 @@ export function SiteHeader({
         <div className="hidden items-center gap-8 text-xs uppercase tracking-widest lg:flex">
           <a className="transition hover:text-acid" href="#about">
             {labels.about}
+          </a>
+          <a className="transition hover:text-acid" href="#experience">
+            {experienceLabel}
           </a>
           <a className="transition hover:text-acid" href="#proof">
             {labels.proof}
@@ -168,6 +177,7 @@ export function SiteHeader({
           <div className="grid border-y border-paper/15">
             {[
               ["#about", labels.about],
+              ["#experience", experienceLabel],
               ["#proof", labels.proof],
               ["#work", labels.work],
               ["#contact", labels.contact],
