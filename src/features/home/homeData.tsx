@@ -1,12 +1,14 @@
 import { Braces, Code2, Database, Sparkles } from "lucide-react";
 import {
   SiCypress,
+  SiDocker,
   SiDotenv,
   SiEslint,
   SiExpress,
   SiFastify,
   SiFlutter,
   SiJavascript,
+  SiJenkins,
   SiJest,
   SiJsonwebtokens,
   SiMui,
@@ -25,6 +27,7 @@ import {
   SiVuedotjs,
   SiWebpack,
 } from "react-icons/si";
+import { FaAws } from "react-icons/fa6";
 
 import { HapiIcon } from "../../shared/icons/HapiIcon";
 
@@ -57,6 +60,9 @@ export const skills = [
   { name: "Db2", icon: Database },
   { name: "PostgreSQL", icon: SiPostgresql },
   { name: "SQL", icon: Database },
+  { name: "Docker", icon: SiDocker },
+  { name: "AWS", icon: FaAws },
+  { name: "Jenkins", icon: SiJenkins },
 ];
 
 export const projects = [
@@ -97,6 +103,8 @@ export const experienceStacks = [
     { name: "Db2", icon: Database },
     { name: "PostgreSQL", icon: SiPostgresql },
     { name: "SQL", icon: Database },
+    { name: "Docker", icon: SiDocker },
+    { name: "Jenkins", icon: SiJenkins },
   ],
   [
     { name: "Flutter", icon: SiFlutter },
@@ -139,6 +147,7 @@ export const credentials = [
       { name: "ESLint", icon: SiEslint },
       { name: "Nodemon", icon: SiNodemon },
       { name: "dotenv", icon: SiDotenv },
+      { name: "AWS", icon: FaAws },
     ],
     repoHref: "https://github.com/geraldos/forum-api",
     certificateHref: "https://www.dicoding.com/certificates/L4PQEJ2EQPO1",
@@ -158,6 +167,8 @@ export const professionalProof = [
       { name: "Vue", icon: SiVuedotjs },
       { name: "Spring Boot", icon: SiSpringboot },
       { name: "Thymeleaf", icon: SiThymeleaf },
+      { name: "Docker", icon: SiDocker },
+      { name: "Jenkins", icon: SiJenkins },
     ],
   },
   {
@@ -171,6 +182,8 @@ export const professionalProof = [
       { name: "Material UI", icon: SiMui },
       { name: "Tachyons CSS", icon: Braces },
       { name: "Redux-Saga", icon: SiReduxsaga },
+      { name: "Docker", icon: SiDocker },
+      { name: "Jenkins", icon: SiJenkins },
     ],
     websiteHref: "https://m2u.maybank.co.id/",
   },

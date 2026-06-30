@@ -1,8 +1,11 @@
 import type { StackItem } from "../../../shared/components/StackPills";
 
 export function SkillMarquee({ skills }: { skills: StackItem[] }) {
-  const SkillList = () => (
-    <div className="flex shrink-0 items-center">
+  const renderSkillList = (duplicate = false) => (
+    <div
+      className="flex shrink-0 items-center"
+      aria-hidden={duplicate ? "true" : undefined}
+    >
       {skills.map(({ name, icon: Icon }) => (
         <div
           key={name}
@@ -22,9 +25,9 @@ export function SkillMarquee({ skills }: { skills: StackItem[] }) {
       className="overflow-hidden border-y border-paper bg-acid py-4 text-paper md:py-5"
       aria-label="Technology stack"
     >
-      <div className="ticker flex w-max">
-        <SkillList />
-        <SkillList />
+      <div className="ticker">
+        {renderSkillList()}
+        {renderSkillList(true)}
       </div>
     </div>
   );

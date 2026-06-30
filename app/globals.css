@@ -63,7 +63,14 @@ body {
 }
 
 .ticker {
+  display: flex;
+  width: max-content;
   animation: ticker 28s linear infinite;
+  -webkit-animation: ticker 28s linear infinite;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
   will-change: transform;
 }
 
@@ -133,10 +140,19 @@ body {
 
 @keyframes ticker {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@-webkit-keyframes ticker {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(-50%, 0, 0);
   }
 }
 
