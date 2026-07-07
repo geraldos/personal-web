@@ -15,6 +15,7 @@ export const homeContent = {
       work: "What I Do",
       contact: "Contact",
       cta: "Let's talk",
+      cv: "Download CV",
       language: "Language",
     },
     hero: {
@@ -118,6 +119,69 @@ export const homeContent = {
         },
       ],
     },
+    resume: {
+      eyebrow: "Recruiter signal",
+      title: "Recruiter snapshot.",
+      description:
+        "A quick view of the strongest signals for hiring conversations: production banking work, frontend ownership, full-stack context, and verified learning.",
+      downloadLabel: "Download CV",
+      contactLabel: "Talk on WhatsApp",
+      highlights: [
+        {
+          title: "Production banking platform",
+          description:
+            "Contributed to M2U Web and internal banking platforms where reliability, maintainability, and delivery discipline matter.",
+        },
+        {
+          title: "Frontend-led full-stack delivery",
+          description:
+            "Strongest in frontend engineering, with enough backend context to shape practical product and API decisions.",
+        },
+        {
+          title: "Testing-minded growth",
+          description:
+            "Keeps sharpening through React, backend JavaScript, automated testing, CI/CD, and Storybook-oriented workflows.",
+        },
+      ],
+    },
+    fieldNotes: {
+      eyebrow: "Field notes",
+      title: "Production field notes.",
+      description:
+        "Short notes on how I approach opaque, high-stakes product work without exposing confidential details.",
+      contextLabel: "Context",
+      moveLabel: "Move",
+      signalLabel: "Signal",
+      notes: [
+        {
+          title: "Rescuing ambiguity before code",
+          context:
+            "Backoffice work often starts with scattered operational rules, edge cases, and handoffs.",
+          move:
+            "Map user flows, failure states, and API expectations before committing to the interface.",
+          signal:
+            "Less rework, clearer handoff, and UI behavior that matches real operations.",
+        },
+        {
+          title: "Keeping banking UI reliable",
+          context:
+            "Financial products punish small inconsistencies, especially around state and recovery.",
+          move:
+            "Favor predictable states, guarded interactions, and regression-friendly component structure.",
+          signal:
+            "Stable experiences that are easier to maintain across production releases.",
+        },
+        {
+          title: "Turning learning into delivery",
+          context:
+            "New tools only matter when they improve shipped work, not just the stack list.",
+          move:
+            "Use focused prototypes to validate patterns before they enter production code.",
+          signal:
+            "Learning compounds into cleaner implementation choices and better team conversations.",
+        },
+      ],
+    },
     process: {
       eyebrow: "How I work",
       titleTop: "End-to-end context.",
@@ -142,6 +206,7 @@ export const homeContent = {
       work: "Keahlian",
       contact: "Kontak",
       cta: "Hubungi saya",
+      cv: "Unduh CV",
       language: "Bahasa",
     },
     hero: {
@@ -245,6 +310,69 @@ export const homeContent = {
         },
       ],
     },
+    resume: {
+      eyebrow: "Sinyal untuk recruiter",
+      title: "Ringkasan recruiter.",
+      description:
+        "Gambaran cepat tentang sinyal terkuat untuk proses hiring: pengalaman banking production, ownership frontend, konteks full-stack, dan pembelajaran tervalidasi.",
+      downloadLabel: "Unduh CV",
+      contactLabel: "Chat WhatsApp",
+      highlights: [
+        {
+          title: "Platform banking production",
+          description:
+            "Berkontribusi di M2U Web dan platform internal banking yang menuntut reliability, maintainability, dan disiplin delivery.",
+        },
+        {
+          title: "Frontend-led full-stack delivery",
+          description:
+            "Paling kuat di frontend engineering, dengan konteks backend yang cukup untuk mengambil keputusan produk dan API secara praktis.",
+        },
+        {
+          title: "Growth dengan mindset testing",
+          description:
+            "Terus diasah lewat React, backend JavaScript, automated testing, CI/CD, dan workflow yang dekat dengan Storybook.",
+        },
+      ],
+    },
+    fieldNotes: {
+      eyebrow: "Catatan produksi",
+      title: "Catatan kerja produksi.",
+      description:
+        "Catatan singkat tentang cara saya menangani pekerjaan product yang kompleks dan sensitif tanpa membuka detail confidential.",
+      contextLabel: "Konteks",
+      moveLabel: "Langkah",
+      signalLabel: "Sinyal",
+      notes: [
+        {
+          title: "Merawat ambiguity sebelum ngoding",
+          context:
+            "Pekerjaan backoffice sering dimulai dari aturan operasional, edge case, dan handoff yang tersebar.",
+          move:
+            "Memetakan user flow, failure state, dan ekspektasi API sebelum mengunci bentuk interface.",
+          signal:
+            "Lebih sedikit rework, handoff lebih jelas, dan perilaku UI lebih dekat dengan operasi nyata.",
+        },
+        {
+          title: "Menjaga UI banking tetap reliable",
+          context:
+            "Produk finansial tidak ramah terhadap inkonsistensi kecil, terutama di state dan recovery.",
+          move:
+            "Memilih state yang predictable, interaksi yang terlindungi, dan struktur komponen yang regression-friendly.",
+          signal:
+            "Experience yang stabil dan lebih mudah dirawat lintas production release.",
+        },
+        {
+          title: "Mengubah belajar jadi delivery",
+          context:
+            "Tool baru hanya berguna kalau memperbaiki kualitas shipped work, bukan sekadar menambah daftar stack.",
+          move:
+            "Memakai prototype terarah untuk validasi pattern sebelum masuk ke production code.",
+          signal:
+            "Pembelajaran berubah jadi pilihan implementasi yang lebih bersih dan diskusi tim yang lebih tajam.",
+        },
+      ],
+    },
     process: {
       eyebrow: "Cara saya bekerja",
       titleTop: "Konteks end-to-end.",
@@ -269,6 +397,7 @@ export const homeContent = {
       work: "領域",
       contact: "連絡",
       cta: "相談する",
+      cv: "Download CV",
       language: "言語",
     },
     hero: {
@@ -372,6 +501,69 @@ export const homeContent = {
         },
       ],
     },
+    resume: {
+      eyebrow: "採用向けシグナル",
+      title: "採用担当者向けサマリー。",
+      description:
+        "本番銀行システム、フロントエンドのオーナーシップ、フルスタックの文脈、検証された学習を短く確認できます。",
+      downloadLabel: "Download CV",
+      contactLabel: "WhatsAppで相談",
+      highlights: [
+        {
+          title: "本番銀行プラットフォーム",
+          description:
+            "M2U Web と社内銀行プラットフォームに携わり、信頼性、保守性、デリバリー品質を重視して開発しました。",
+        },
+        {
+          title: "フロントエンド主導のフルスタック開発",
+          description:
+            "主軸はフロントエンドでありながら、実践的なプロダクト判断とAPI判断に必要なバックエンド文脈も持っています。",
+        },
+        {
+          title: "テスト志向の成長",
+          description:
+            "React、Backend JavaScript、自動テスト、CI/CD、Storybook を通じて継続的にスキルを磨いています。",
+        },
+      ],
+    },
+    fieldNotes: {
+      eyebrow: "フィールドノート",
+      title: "本番開発のフィールドノート。",
+      description:
+        "機密情報を公開せずに、複雑で重要度の高いプロダクト開発へどう向き合うかを短くまとめています。",
+      contextLabel: "Context",
+      moveLabel: "Move",
+      signalLabel: "Signal",
+      notes: [
+        {
+          title: "コードを書く前に曖昧さを整理する",
+          context:
+            "バックオフィス開発は、運用ルール、例外ケース、引き継ぎ情報が分散した状態から始まることがあります。",
+          move:
+            "UIを固める前に、ユーザーフロー、失敗状態、APIへの期待値を整理します。",
+          signal:
+            "手戻りを減らし、引き継ぎを明確にし、実際の運用に合うUI挙動へ近づけます。",
+        },
+        {
+          title: "銀行UIの信頼性を保つ",
+          context:
+            "金融プロダクトでは、状態管理や復旧導線の小さな不一致が体験を大きく損ないます。",
+          move:
+            "予測しやすい状態、保護された操作、回帰テストしやすいコンポーネント構造を重視します。",
+          signal:
+            "本番リリースを重ねても安定し、保守しやすい体験につながります。",
+        },
+        {
+          title: "学習をデリバリーへ変える",
+          context:
+            "新しいツールは、採用すること自体よりも、出荷する品質を上げる時に意味を持ちます。",
+          move:
+            "本番コードへ入れる前に、小さなプロトタイプでパターンを検証します。",
+          signal:
+            "学習がより良い実装判断とチーム内の具体的な議論につながります。",
+        },
+      ],
+    },
     process: {
       eyebrow: "働き方",
       titleTop: "エンドツーエンドの理解。",
@@ -396,6 +588,7 @@ export const homeContent = {
       work: "我的专长",
       contact: "联系我",
       cta: "聊一聊",
+      cv: "Download CV",
       language: "语言",
     },
     hero: {
@@ -486,6 +679,69 @@ export const homeContent = {
           title: "学习实验",
           description: "通过聚焦的原型、技术研究和有目的的实验探索新技术。",
           tags: ["AI", "原型", "研究"],
+        },
+      ],
+    },
+    resume: {
+      eyebrow: "招聘信号",
+      title: "招聘快速摘要。",
+      description:
+        "快速展示招聘沟通中最重要的信号：生产级银行项目、前端 ownership、全栈语境，以及经过验证的学习路径。",
+      downloadLabel: "Download CV",
+      contactLabel: "WhatsApp 沟通",
+      highlights: [
+        {
+          title: "生产级银行平台",
+          description:
+            "参与 M2U Web 和内部银行平台建设，重视可靠性、可维护性和交付纪律。",
+        },
+        {
+          title: "以前端为主的全栈交付",
+          description:
+            "核心强项是前端工程，同时具备足够的后端语境，能做出实际的产品和 API 决策。",
+        },
+        {
+          title: "测试导向的成长",
+          description:
+            "持续通过 React、Backend JavaScript、自动化测试、CI/CD 和 Storybook 工作流提升能力。",
+        },
+      ],
+    },
+    fieldNotes: {
+      eyebrow: "现场笔记",
+      title: "生产项目现场笔记。",
+      description:
+        "在不公开保密细节的前提下，简短展示我如何处理复杂且高要求的产品工作。",
+      contextLabel: "Context",
+      moveLabel: "Move",
+      signalLabel: "Signal",
+      notes: [
+        {
+          title: "写代码前先处理模糊性",
+          context:
+            "后台项目往往从分散的运营规则、边界情况和交接信息开始。",
+          move:
+            "在确定界面前，先梳理用户流程、失败状态和 API 预期。",
+          signal:
+            "减少返工，让交接更清晰，也让 UI 行为更贴近真实运营。",
+        },
+        {
+          title: "保持银行 UI 的可靠性",
+          context:
+            "金融产品对细小的不一致非常敏感，尤其是状态和恢复路径。",
+          move:
+            "优先选择可预测的状态、受保护的交互，以及便于回归验证的组件结构。",
+          signal:
+            "形成更稳定、更容易随生产发布维护的体验。",
+        },
+        {
+          title: "把学习转化为交付",
+          context:
+            "新工具只有在提升已交付工作的质量时，才真正有价值。",
+          move:
+            "在进入生产代码前，用聚焦的原型验证模式。",
+          signal:
+            "让学习沉淀为更清晰的实现选择和更有效的团队沟通。",
         },
       ],
     },

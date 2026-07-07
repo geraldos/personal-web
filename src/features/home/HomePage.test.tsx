@@ -32,6 +32,37 @@ describe("HomePage", () => {
     expect(screen.getByText("Maybank Indonesia")).toBeInTheDocument();
   });
 
+  it("surfaces a recruiter snapshot with shared CV links", () => {
+    render(createElement(HomePage, { currentDate: new Date("2026-06-18T00:00:00") }));
+
+    expect(screen.getByRole("heading", { name: "Recruiter snapshot." })).toBeInTheDocument();
+    expect(screen.getByText("Production banking platform")).toBeInTheDocument();
+    expect(screen.getByText("Frontend-led full-stack delivery")).toBeInTheDocument();
+
+    const cvLinks = screen.getAllByRole("link", { name: "Download CV" });
+    const cvHref =
+      "https://drive.google.com/file/d/1tVsjgISqvOS04oBys8YYPQRd2pI0d-Pn/view?usp=sharing";
+    expect(cvLinks.length).toBeGreaterThan(0);
+    expect(
+      cvLinks.some(
+        (link) =>
+          link.getAttribute("href") === cvHref &&
+          link.getAttribute("target") === "_blank" &&
+          link.getAttribute("rel") === "noreferrer" &&
+          !link.hasAttribute("download"),
+      ),
+    ).toBe(true);
+  });
+
+  it("renders production field notes for confidential work context", () => {
+    render(createElement(HomePage, { currentDate: new Date("2026-06-18T00:00:00") }));
+
+    expect(screen.getByRole("heading", { name: "Production field notes." })).toBeInTheDocument();
+    expect(screen.getByText("Rescuing ambiguity before code")).toBeInTheDocument();
+    expect(screen.getByText("Keeping banking UI reliable")).toBeInTheDocument();
+    expect(screen.getByText("Turning learning into delivery")).toBeInTheDocument();
+  });
+
   it("switches the page copy to Indonesian", async () => {
     render(createElement(HomePage, { currentDate: new Date("2026-06-18T00:00:00") }));
 

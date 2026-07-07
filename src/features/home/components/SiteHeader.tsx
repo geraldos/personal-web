@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Download, Menu, X } from "lucide-react";
 
 import { Logo } from "../../../shared/components/Logo";
 import { ThemeToggle } from "../../../shared/components/ThemeToggle";
@@ -54,6 +54,8 @@ function FlagIcon({ language }: { language: LanguageCode }) {
 export function SiteHeader({
   activeLanguage,
   labels,
+  cvFileName,
+  cvHref,
   onLanguageChange,
   whatsappHref,
 }: {
@@ -64,14 +66,21 @@ export function SiteHeader({
     work: string;
     contact: string;
     cta: string;
+    cv: string;
     language: string;
   };
+  cvFileName: string;
+  cvHref: string;
   onLanguageChange: (language: LanguageCode) => void;
   whatsappHref: string;
 }) {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const activeLanguageName = languages.find((language) => language.code === activeLanguage)?.name;
+  const isExternalCvHref = cvHref.startsWith("http");
+  const cvDownloadFileName = cvHref === "#" || isExternalCvHref ? undefined : cvFileName;
+  const cvLinkRel = isExternalCvHref ? "noreferrer" : undefined;
+  const cvLinkTarget = isExternalCvHref ? "_blank" : undefined;
   const experienceLabel = {
     en: "Experience",
     id: "Pengalaman",
@@ -90,6 +99,9 @@ export function SiteHeader({
           <a className="transition hover:text-acid" href="#experience">
             {experienceLabel}
           </a>
+          <a className="transition hover:text-acid" href="#resume">
+            CV
+          </a>
           <a className="transition hover:text-acid" href="#proof">
             {labels.proof}
           </a>
@@ -101,6 +113,15 @@ export function SiteHeader({
           </a>
         </div>
         <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href={cvHref}
+            download={cvDownloadFileName}
+            target={cvLinkTarget}
+            rel={cvLinkRel}
+            className="flex items-center gap-2 rounded-full border border-paper/20 px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-paper/70 transition hover:border-acid hover:text-acid lg:text-xs"
+          >
+            <Download size={14} aria-hidden="true" /> {labels.cv}
+          </a>
           <ThemeToggle />
           <div className="relative">
             <button
@@ -178,6 +199,7 @@ export function SiteHeader({
             {[
               ["#about", labels.about],
               ["#experience", experienceLabel],
+              ["#resume", "CV"],
               ["#proof", labels.proof],
               ["#work", labels.work],
               ["#contact", labels.contact],
@@ -217,6 +239,16 @@ export function SiteHeader({
               ))}
             </div>
           </div>
+          <a
+            href={cvHref}
+            download={cvDownloadFileName}
+            target={cvLinkTarget}
+            rel={cvLinkRel}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex items-center justify-center gap-2 rounded-full border border-paper/25 px-4 py-3 text-xs font-bold uppercase tracking-wider text-paper"
+          >
+            <Download size={15} aria-hidden="true" /> {labels.cv}
+          </a>
           <a
             href={whatsappHref}
             target="_blank"

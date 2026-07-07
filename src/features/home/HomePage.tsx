@@ -13,10 +13,12 @@ import { experienceContent } from "./experienceContent";
 import { profile, skills } from "./homeData";
 import { AboutSection } from "./sections/AboutSection";
 import { ExperienceSection } from "./sections/ExperienceSection";
+import { FieldNotesSection } from "./sections/FieldNotesSection";
 import { FooterSection } from "./sections/FooterSection";
 import { HeroSection } from "./sections/HeroSection";
 import { ProcessSection } from "./sections/ProcessSection";
 import { ProofSection } from "./sections/ProofSection";
+import { ResumeSection } from "./sections/ResumeSection";
 import { WorkSection } from "./sections/WorkSection";
 
 export function HomePage({ currentDate = new Date() }: { currentDate?: Date }) {
@@ -52,6 +54,8 @@ export function HomePage({ currentDate = new Date() }: { currentDate?: Date }) {
       <SiteHeader
         activeLanguage={language}
         labels={content.nav}
+        cvFileName={profile.cvFileName}
+        cvHref={profile.cvHref}
         onLanguageChange={setLanguage}
         whatsappHref={profile.whatsappHref}
       />
@@ -60,6 +64,13 @@ export function HomePage({ currentDate = new Date() }: { currentDate?: Date }) {
       <SkillMarquee skills={skills} />
       <AboutSection content={content.about} />
       <ExperienceSection content={experienceContent[language]} />
+      <ResumeSection
+        content={content.resume}
+        cvFileName={profile.cvFileName}
+        cvHref={profile.cvHref}
+        whatsappHref={profile.whatsappHref}
+      />
+      <FieldNotesSection content={content.fieldNotes} />
       <ProofSection content={content.proof} />
       <WorkSection content={content.work} />
       <ProcessSection content={content.process} />

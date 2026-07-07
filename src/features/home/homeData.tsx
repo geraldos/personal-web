@@ -36,6 +36,9 @@ export const profile = {
   githubHref: "https://github.com/geraldos",
   linkedInHref: "https://www.linkedin.com/in/geraldo-sepdwijaya/",
   whatsappHref: "https://wa.me/6285121535998",
+  cvHref:
+    "https://drive.google.com/file/d/1tVsjgISqvOS04oBys8YYPQRd2pI0d-Pn/view?usp=sharing",
+  cvFileName: "geraldo-sepdwijaya-cv.md",
   careerStartDate: new Date("2020-11-20T00:00:00"),
 };
 
