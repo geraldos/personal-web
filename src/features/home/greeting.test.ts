@@ -3,16 +3,26 @@ import { describe, expect, it } from "vitest";
 import { getLocalizedGreeting } from "./greeting";
 
 describe("getLocalizedGreeting", () => {
-  it("uses Japanese greetings that match the local time", () => {
-    expect(getLocalizedGreeting("ja", new Date("2026-06-18T08:00:00"))).toBe("おはようございます、ジェラルドです。");
-    expect(getLocalizedGreeting("ja", new Date("2026-06-18T14:00:00"))).toBe("こんにちは、ジェラルドです。");
-    expect(getLocalizedGreeting("ja", new Date("2026-06-18T20:00:00"))).toBe("こんばんは、ジェラルドです。");
+  it.each([
+    [4, "こんばんは、ジェラルドです。"],
+    [5, "おはようございます、ジェラルドです。"],
+    [10, "おはようございます、ジェラルドです。"],
+    [11, "こんにちは、ジェラルドです。"],
+    [17, "こんにちは、ジェラルドです。"],
+    [18, "こんばんは、ジェラルドです。"],
+  ])("uses the correct Japanese greeting at hour %i", (hour, expected) => {
+    expect(getLocalizedGreeting("ja", new Date(2026, 5, 18, hour))).toBe(expected);
   });
 
-  it("uses Chinese greetings that match the local time", () => {
-    expect(getLocalizedGreeting("zh", new Date("2026-06-18T08:00:00"))).toBe("早上好，我是杰拉尔多。");
-    expect(getLocalizedGreeting("zh", new Date("2026-06-18T14:00:00"))).toBe("你好，我是杰拉尔多。");
-    expect(getLocalizedGreeting("zh", new Date("2026-06-18T20:00:00"))).toBe("晚上好，我是杰拉尔多。");
+  it.each([
+    [4, "凌晨好，我是杰拉尔多。"],
+    [5, "早上好，我是杰拉尔多。"],
+    [10, "早上好，我是杰拉尔多。"],
+    [11, "你好，我是杰拉尔多。"],
+    [17, "你好，我是杰拉尔多。"],
+    [18, "晚上好，我是杰拉尔多。"],
+  ])("uses the correct Chinese greeting at hour %i", (hour, expected) => {
+    expect(getLocalizedGreeting("zh", new Date(2026, 5, 18, hour))).toBe(expected);
   });
 
   it("keeps the original greeting for languages without a time-aware greeting", () => {

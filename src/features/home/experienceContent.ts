@@ -14,7 +14,7 @@ export type ExperienceContent = {
   }>;
 };
 
-export const experienceContent: Record<LanguageCode, ExperienceContent> = {
+const baseExperienceContent: Record<LanguageCode, ExperienceContent> = {
   en: {
     eyebrow: "Experience",
     titleTop: "Built in",
@@ -135,4 +135,67 @@ export const experienceContent: Record<LanguageCode, ExperienceContent> = {
       },
     ],
   },
+};
+
+const reviewerExperience: Record<LanguageCode, ExperienceContent["roles"][number]> = {
+  en: {
+    role: "External Code Reviewer",
+    period: "Sep 2025 — Present",
+    company: "Dicoding Indonesia",
+    location: "Remote, Indonesia",
+    highlights: [
+      "Review and assess learner submissions across the Front-End Web Developer and React Developer learning paths against Dicoding's technical criteria.",
+      "Provide specific, actionable feedback on functionality, code quality, accessibility, testing, and maintainability.",
+      "Help learners strengthen modern web fundamentals and production-minded React practices through consistent code reviews.",
+    ],
+  },
+  id: {
+    role: "External Code Reviewer",
+    period: "Sep 2025 — Sekarang",
+    company: "Dicoding Indonesia",
+    location: "Remote, Indonesia",
+    highlights: [
+      "Mereview dan menilai submission peserta pada learning path Front-End Web Developer dan React Developer berdasarkan kriteria teknis Dicoding.",
+      "Memberikan feedback yang spesifik dan actionable terkait fungsionalitas, kualitas kode, aksesibilitas, testing, dan maintainability.",
+      "Membantu peserta memperkuat fundamental web modern dan praktik React yang production-minded melalui code review yang konsisten.",
+    ],
+  },
+  ja: {
+    role: "外部コードレビュアー",
+    period: "2025年9月 — 現在",
+    company: "Dicoding Indonesia",
+    location: "リモート、インドネシア",
+    highlights: [
+      "Front-End Web Developer と React Developer のラーニングパスで、Dicoding の技術基準に基づき受講者の提出物をレビュー・評価。",
+      "機能性、コード品質、アクセシビリティ、テスト、保守性について、具体的で実行可能なフィードバックを提供。",
+      "一貫したコードレビューを通じて、モダン Web の基礎と本番を意識した React の実践力向上を支援。",
+    ],
+  },
+  zh: {
+    role: "外部代码评审员",
+    period: "2025年9月 — 至今",
+    company: "Dicoding Indonesia",
+    location: "远程，印度尼西亚",
+    highlights: [
+      "依据 Dicoding 的技术标准，评审 Front-End Web Developer 与 React Developer 学习路径中的学员提交项目。",
+      "围绕功能、代码质量、无障碍、测试与可维护性，提供具体且可执行的反馈。",
+      "通过一致的代码评审，帮助学员强化现代 Web 基础与面向生产环境的 React 实践。",
+    ],
+  },
+};
+
+function insertReviewerExperience(language: LanguageCode): ExperienceContent {
+  const content = baseExperienceContent[language];
+
+  return {
+    ...content,
+    roles: [content.roles[0], reviewerExperience[language], ...content.roles.slice(1)],
+  };
+}
+
+export const experienceContent: Record<LanguageCode, ExperienceContent> = {
+  en: insertReviewerExperience("en"),
+  id: insertReviewerExperience("id"),
+  ja: insertReviewerExperience("ja"),
+  zh: insertReviewerExperience("zh"),
 };

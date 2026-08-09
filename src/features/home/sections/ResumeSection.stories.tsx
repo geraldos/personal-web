@@ -12,9 +12,9 @@ const meta = {
   },
   args: {
     content: homeContent.en.resume,
+    contactHref: profile.contactHref,
     cvFileName: profile.cvFileName,
     cvHref: profile.cvHref,
-    whatsappHref: profile.whatsappHref,
   },
 } satisfies Meta<typeof ResumeSection>;
 

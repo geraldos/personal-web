@@ -6,11 +6,14 @@ const careerStartDate = new Date("2020-11-20T00:00:00");
 
 describe("date helpers", () => {
   it("keeps the previous experience year before the anniversary date", () => {
+    expect(calculateYearsOfExperience(careerStartDate, new Date("2026-10-30T12:00:00"))).toBe(5);
     expect(calculateYearsOfExperience(careerStartDate, new Date("2026-11-19T12:00:00"))).toBe(5);
   });
 
-  it("increments experience on the anniversary date", () => {
+  it("increments experience on and after the anniversary date", () => {
     expect(calculateYearsOfExperience(careerStartDate, new Date("2026-11-20T00:00:00"))).toBe(6);
+    expect(calculateYearsOfExperience(careerStartDate, new Date("2026-11-21T00:00:00"))).toBe(6);
+    expect(calculateYearsOfExperience(careerStartDate, new Date("2026-12-01T00:00:00"))).toBe(6);
   });
 
   it("never returns a negative experience value before the career start date", () => {

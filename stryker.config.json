@@ -1,0 +1,47 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "testRunner": "vitest",
+  "vitest": {
+    "configFile": "vitest.config.ts",
+    "related": false
+  },
+  "mutate": [
+    "app/loading.tsx",
+    "app/cv/route.ts",
+    "src/shared/lib/date.ts",
+    "src/features/home/greeting.ts",
+    "src/features/home/HomePage.tsx",
+    "src/shared/components/**/*.tsx",
+    "src/features/home/components/**/*.tsx",
+    "src/features/home/sections/**/*.tsx",
+    "!**/*.test.tsx",
+    "!**/*.stories.tsx"
+  ],
+  "mutator": {
+    "excludedMutations": ["StringLiteral"]
+  },
+  "ignoreStatic": true,
+  "incremental": true,
+  "cleanTempDir": "always",
+  "concurrency": 2,
+  "reporters": ["clear-text", "html", "json"],
+  "clearTextReporter": {
+    "allowColor": true,
+    "logTests": true,
+    "maxTestsToLog": 3,
+    "reportTests": true,
+    "reportMutants": true,
+    "reportScoreTable": true
+  },
+  "htmlReporter": {
+    "fileName": "reports/mutation/index.html"
+  },
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": 60
+  }
+}

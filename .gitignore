@@ -3,6 +3,9 @@ node_modules
 out
 dist
 storybook-static
+coverage
+reports
+.stryker-tmp
 tsconfig.tsbuildinfo
 
 .env

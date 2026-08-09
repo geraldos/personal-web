@@ -4,14 +4,14 @@ import type { HomeContent } from "../homeContent";
 
 export function ResumeSection({
   content,
+  contactHref,
   cvFileName,
   cvHref,
-  whatsappHref,
 }: {
   content: HomeContent["resume"];
+  contactHref: string;
   cvFileName: string;
   cvHref: string;
-  whatsappHref: string;
 }) {
   const isExternalCvHref = cvHref.startsWith("http");
   const cvDownloadFileName = cvHref === "#" || isExternalCvHref ? undefined : cvFileName;
@@ -42,7 +42,7 @@ export function ResumeSection({
               <Download size={15} aria-hidden="true" /> {content.downloadLabel}
             </a>
             <a
-              href={whatsappHref}
+              href={contactHref}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-5 py-3 text-xs font-bold uppercase tracking-wider text-ink transition hover:border-acid hover:text-acid"

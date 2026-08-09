@@ -8,6 +8,7 @@ import { ThemeToggle } from "../../../shared/components/ThemeToggle";
 import type { LanguageCode } from "../homeContent";
 import { languages } from "../homeContent";
 
+// Stryker disable all: Flag SVG branches are decorative and intentionally hidden from accessibility APIs.
 function FlagIcon({ language }: { language: LanguageCode }) {
   if (language === "id") {
     return (
@@ -50,14 +51,15 @@ function FlagIcon({ language }: { language: LanguageCode }) {
     </svg>
   );
 }
+// Stryker restore all
 
 export function SiteHeader({
   activeLanguage,
   labels,
+  contactHref,
   cvFileName,
   cvHref,
   onLanguageChange,
-  whatsappHref,
 }: {
   activeLanguage: LanguageCode;
   labels: {
@@ -69,10 +71,10 @@ export function SiteHeader({
     cv: string;
     language: string;
   };
+  contactHref: string;
   cvFileName: string;
   cvHref: string;
   onLanguageChange: (language: LanguageCode) => void;
-  whatsappHref: string;
 }) {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -167,7 +169,7 @@ export function SiteHeader({
             </div>
           </div>
           <a
-            href={whatsappHref}
+            href={contactHref}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 rounded-full border border-paper/30 px-4 py-2 text-[10px] font-bold uppercase tracking-wider transition hover:border-acid hover:bg-acid hover:text-paper lg:text-xs"
@@ -250,7 +252,7 @@ export function SiteHeader({
             <Download size={15} aria-hidden="true" /> {labels.cv}
           </a>
           <a
-            href={whatsappHref}
+            href={contactHref}
             target="_blank"
             rel="noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}

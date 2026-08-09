@@ -125,7 +125,7 @@ export const homeContent = {
       description:
         "A quick view of the strongest signals for hiring conversations: production banking work, frontend ownership, full-stack context, and verified learning.",
       downloadLabel: "Download CV",
-      contactLabel: "Talk on WhatsApp",
+      contactLabel: "Send an email",
       highlights: [
         {
           title: "Production banking platform",
@@ -316,7 +316,7 @@ export const homeContent = {
       description:
         "Gambaran cepat tentang sinyal terkuat untuk proses hiring: pengalaman banking production, ownership frontend, konteks full-stack, dan pembelajaran tervalidasi.",
       downloadLabel: "Unduh CV",
-      contactLabel: "Chat WhatsApp",
+      contactLabel: "Kirim email",
       highlights: [
         {
           title: "Platform banking production",
@@ -507,7 +507,7 @@ export const homeContent = {
       description:
         "本番銀行システム、フロントエンドのオーナーシップ、フルスタックの文脈、検証された学習を短く確認できます。",
       downloadLabel: "Download CV",
-      contactLabel: "WhatsAppで相談",
+      contactLabel: "メールを送る",
       highlights: [
         {
           title: "本番銀行プラットフォーム",
@@ -688,7 +688,7 @@ export const homeContent = {
       description:
         "快速展示招聘沟通中最重要的信号：生产级银行项目、前端 ownership、全栈语境，以及经过验证的学习路径。",
       downloadLabel: "Download CV",
-      contactLabel: "WhatsApp 沟通",
+      contactLabel: "发送邮件",
       highlights: [
         {
           title: "生产级银行平台",

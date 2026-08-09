@@ -1,27 +1,25 @@
-import { Github, Linkedin, Mail, MoveUpRight } from "lucide-react";
+import { Github, Mail, MoveUpRight } from "lucide-react";
 
 import type { HomeContent } from "../homeContent";
 
 export function FooterSection({
   content,
+  contactHref,
   currentYear,
   email,
   githubHref,
-  linkedInHref,
-  whatsappHref,
 }: {
   content: HomeContent["footer"];
+  contactHref: string;
   currentYear: number;
   email: string;
   githubHref: string;
-  linkedInHref: string;
-  whatsappHref: string;
 }) {
   return (
     <footer id="contact" className="relative bg-acid px-5 pb-8 pt-24 text-paper md:px-10 md:pt-36">
       <div className="mx-auto max-w-[1500px]">
         <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em]">{content.eyebrow}</p>
-        <a href={whatsappHref} target="_blank" rel="noreferrer" className="group block">
+        <a href={contactHref} target="_blank" rel="noreferrer" className="group block">
           <h2 className="font-display text-[15vw] font-bold uppercase leading-[0.75] tracking-[-0.085em] transition group-hover:tracking-[-0.06em] md:text-[12vw]">
             {content.titleTop}
             <span className="flex items-center">
@@ -35,7 +33,9 @@ export function FooterSection({
             <span className="block text-paper/55">{content.contact}</span>
             <a
               className="mt-2 inline-flex items-center gap-2 font-bold hover:underline"
-              href={`mailto:${email}`}
+              href={contactHref}
+              target="_blank"
+              rel="noreferrer"
             >
               <Mail size={14} /> {email}
             </a>
@@ -49,15 +49,6 @@ export function FooterSection({
               className="transition hover:scale-125"
             >
               <Github size={20} />
-            </a>
-            <a
-              aria-label="LinkedIn"
-              href={linkedInHref}
-              target="_blank"
-              rel="noreferrer"
-              className="transition hover:scale-125"
-            >
-              <Linkedin size={20} />
             </a>
           </div>
           <div className="md:text-right">

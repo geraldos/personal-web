@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import { calculateYearsOfExperience, getCurrentYear } from "../../shared/lib/date";
-import { FloatingWhatsappButton } from "./components/FloatingWhatsappButton";
 import { SiteHeader } from "./components/SiteHeader";
 import { SkillMarquee } from "./components/SkillMarquee";
 import { homeContent, type LanguageCode } from "./homeContent";
@@ -56,19 +55,18 @@ export function HomePage({ currentDate = new Date() }: { currentDate?: Date }) {
         labels={content.nav}
         cvFileName={profile.cvFileName}
         cvHref={profile.cvHref}
+        contactHref={profile.contactHref}
         onLanguageChange={setLanguage}
-        whatsappHref={profile.whatsappHref}
       />
-      <FloatingWhatsappButton whatsappHref={profile.whatsappHref} />
       <HeroSection content={{ ...content.hero, intro: greeting ?? content.hero.intro }} yearsOfExperience={yearsOfExperience} />
       <SkillMarquee skills={skills} />
       <AboutSection content={content.about} />
       <ExperienceSection content={experienceContent[language]} />
       <ResumeSection
         content={content.resume}
+        contactHref={profile.contactHref}
         cvFileName={profile.cvFileName}
         cvHref={profile.cvHref}
-        whatsappHref={profile.whatsappHref}
       />
       <FieldNotesSection content={content.fieldNotes} />
       <ProofSection content={content.proof} />
@@ -76,11 +74,10 @@ export function HomePage({ currentDate = new Date() }: { currentDate?: Date }) {
       <ProcessSection content={content.process} />
       <FooterSection
         content={content.footer}
+        contactHref={profile.contactHref}
         currentYear={getCurrentYear(currentDate)}
         email={profile.email}
         githubHref={profile.githubHref}
-        linkedInHref={profile.linkedInHref}
-        whatsappHref={profile.whatsappHref}
       />
     </main>
   );

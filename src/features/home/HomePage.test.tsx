@@ -30,6 +30,8 @@ describe("HomePage", () => {
     expect(screen.getByText("Backend JavaScript Learning Path")).toBeInTheDocument();
     expect(screen.getByText("Software Engineer")).toBeInTheDocument();
     expect(screen.getByText("Maybank Indonesia")).toBeInTheDocument();
+    expect(screen.getByText("External Code Reviewer")).toBeInTheDocument();
+    expect(screen.getAllByText("Dicoding Indonesia").length).toBeGreaterThan(0);
   });
 
   it("surfaces a recruiter snapshot with shared CV links", () => {

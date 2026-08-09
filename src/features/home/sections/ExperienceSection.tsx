@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, Landmark, MapPin, PanelsTopLeft } from "lucide-react";
+import { BookOpenCheck, BriefcaseBusiness, Landmark, MapPin, PanelsTopLeft } from "lucide-react";
 
 import { StackPills } from "../../../shared/components/StackPills";
 import type { ExperienceContent } from "../experienceContent";
@@ -27,7 +27,13 @@ export function ExperienceSection({ content }: { content: ExperienceContent }) {
           {content.roles.map((role, index) => (
             <li key={`${role.company}-${role.period}`} className="relative">
               <span className="absolute -left-[3.15rem] top-6 flex h-10 w-10 items-center justify-center rounded-full border-4 border-ink bg-acid text-ink shadow-[0_8px_20px_rgb(0_0_0_/_0.2)] md:-left-[3.9rem]">
-                {index === 0 ? <Landmark size={17} aria-hidden="true" /> : <PanelsTopLeft size={17} aria-hidden="true" />}
+                {index === 0 ? (
+                  <Landmark size={17} aria-hidden="true" />
+                ) : index === 1 ? (
+                  <BookOpenCheck size={17} aria-hidden="true" />
+                ) : (
+                  <PanelsTopLeft size={17} aria-hidden="true" />
+                )}
               </span>
               <article className="rounded-3xl border border-paper/15 bg-ink/70 p-6 pr-16 transition duration-300 hover:border-acid/70 sm:pr-6 md:p-8">
                 <div className="flex flex-col gap-5 border-b border-paper/15 pb-6 md:flex-row md:items-start md:justify-between">

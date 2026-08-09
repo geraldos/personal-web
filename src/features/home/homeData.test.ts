@@ -37,6 +37,9 @@ describe("technology stacks", () => {
     expect(experienceStacks[0].map((stack) => stack.name)).toEqual(
       expect.arrayContaining(["Docker", "Jenkins"]),
     );
+    expect(experienceStacks[1].map((stack) => stack.name)).toEqual(
+      expect.arrayContaining(["HTML5", "CSS", "JavaScript", "React", "Webpack", "Jest", "PWA"]),
+    );
     expect(credentials[1].stacks.map((stack) => stack.name)).toContain("AWS");
   });
 });

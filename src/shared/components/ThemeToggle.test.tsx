@@ -20,29 +20,42 @@ describe("ThemeToggle", () => {
     window.localStorage.setItem("geraldo-theme", "light");
     mockSystemTheme(true);
 
-    render(<ThemeToggle />);
+    const { container } = render(<ThemeToggle />);
 
-    expect(await screen.findByRole("button", { name: "Switch to dark theme" })).toBeInTheDocument();
+    expect(await screen.findByRole("button", { name: "Switch to dark theme" })).toHaveAttribute("aria-pressed", "true");
+    expect(container.querySelector(".lucide-moon")).toBeInTheDocument();
     expect(document.documentElement.dataset.theme).toBe("light");
   });
 
   it("uses the system preference when no preference has been saved", async () => {
     mockSystemTheme(false);
 
+    const { container } = render(<ThemeToggle />);
+
+    expect(await screen.findByRole("button", { name: "Switch to dark theme" })).toHaveAttribute("aria-pressed", "true");
+    expect(container.querySelector(".lucide-moon")).toBeInTheDocument();
+    expect(document.documentElement.dataset.theme).toBe("light");
+  });
+
+  it("keeps a saved dark preference even when the system prefers light", async () => {
+    window.localStorage.setItem("geraldo-theme", "dark");
+    mockSystemTheme(false);
+
     render(<ThemeToggle />);
 
-    expect(await screen.findByRole("button", { name: "Switch to dark theme" })).toBeInTheDocument();
-    expect(document.documentElement.dataset.theme).toBe("light");
+    expect(await screen.findByRole("button", { name: "Switch to light theme" })).toHaveAttribute("aria-pressed", "false");
   });
 
   it("toggles the theme and persists the new choice", async () => {
     mockSystemTheme(true);
     const user = userEvent.setup();
 
-    render(<ThemeToggle />);
+    const { container } = render(<ThemeToggle />);
 
     await user.click(await screen.findByRole("button", { name: "Switch to light theme" }));
 
+    expect(screen.getByRole("button", { name: "Switch to dark theme" })).toHaveAttribute("aria-pressed", "true");
+    expect(container.querySelector(".lucide-moon")).toBeInTheDocument();
     expect(document.documentElement.dataset.theme).toBe("light");
     expect(window.localStorage.getItem("geraldo-theme")).toBe("light");
   });

@@ -7,8 +7,6 @@ Jakarta, Indonesia
 
 Email: sepdwijaya18@gmail.com
 GitHub: https://github.com/geraldos
-LinkedIn: https://www.linkedin.com/in/geraldo-sepdwijaya/
-WhatsApp: https://wa.me/6285121535998
 
 ## Summary
 
@@ -26,6 +24,16 @@ South Jakarta, DKI Jakarta, Indonesia
 - Built Back Office MCM (Open API platform) from scratch using React for a production banking environment.
 - Built Back Office RDN Offline features across frontend and backend, delivering scalable enterprise solutions.
 - Contributed to development and maintenance of M2U apps using Spring Boot in production.
+
+### External Code Reviewer
+
+Dicoding Indonesia
+Sep 2025 - Present
+Remote, Indonesia
+
+- Review learner submissions across the Front-End Web Developer and React Developer learning paths against Dicoding's technical criteria.
+- Provide actionable feedback on functionality, code quality, accessibility, testing, and maintainability.
+- Help learners strengthen modern web fundamentals and production-minded React practices through consistent code reviews.
 
 ### Frontend Engineer
 

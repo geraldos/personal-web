@@ -19,10 +19,15 @@ const preview: Preview = {
   decorators: [
     (Story, context) => {
       document.documentElement.dataset.theme = context.globals.theme;
+      document.documentElement.style.colorScheme = context.globals.theme;
+      window.localStorage.setItem("geraldo-theme", context.globals.theme);
       return Story();
     },
   ],
   parameters: {
+    a11y: {
+      test: "error",
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -30,6 +35,11 @@ const preview: Preview = {
       },
     },
     layout: "fullscreen",
+    options: {
+      storySort: {
+        order: ["Home", ["HomePage", "Components", "Sections"], "Shared"],
+      },
+    },
   },
 };
 

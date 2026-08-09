@@ -1,12 +1,14 @@
 import { Braces, Code2, Database, Sparkles } from "lucide-react";
 import {
   SiCypress,
+  SiCss,
   SiDocker,
   SiDotenv,
   SiEslint,
   SiExpress,
   SiFastify,
   SiFlutter,
+  SiHtml5,
   SiJavascript,
   SiJenkins,
   SiJest,
@@ -16,7 +18,9 @@ import {
   SiNodedotjs,
   SiNodemon,
   SiPostgresql,
+  SiPwa,
   SiReact,
+  SiRedux,
   SiReduxsaga,
   SiSpringboot,
   SiStorybook,
@@ -33,9 +37,9 @@ import { HapiIcon } from "../../shared/icons/HapiIcon";
 
 export const profile = {
   email: "sepdwijaya18@gmail.com",
+  contactHref:
+    "https://mail.google.com/mail/?view=cm&fs=1&to=sepdwijaya18%40gmail.com",
   githubHref: "https://github.com/geraldos",
-  linkedInHref: "https://www.linkedin.com/in/geraldo-sepdwijaya/",
-  whatsappHref: "https://wa.me/6285121535998",
   cvHref:
     "https://drive.google.com/file/d/1tVsjgISqvOS04oBys8YYPQRd2pI0d-Pn/view?usp=sharing",
   cvFileName: "geraldo-sepdwijaya-cv.md",
@@ -108,6 +112,17 @@ export const experienceStacks = [
     { name: "SQL", icon: Database },
     { name: "Docker", icon: SiDocker },
     { name: "Jenkins", icon: SiJenkins },
+  ],
+  [
+    { name: "HTML5", icon: SiHtml5 },
+    { name: "CSS", icon: SiCss },
+    { name: "JavaScript", icon: SiJavascript },
+    { name: "React", icon: SiReact },
+    { name: "Redux", icon: SiRedux },
+    { name: "Webpack", icon: SiWebpack },
+    { name: "Jest", icon: SiJest },
+    { name: "Testing Library", icon: SiTestinglibrary },
+    { name: "PWA", icon: SiPwa },
   ],
   [
     { name: "Flutter", icon: SiFlutter },
