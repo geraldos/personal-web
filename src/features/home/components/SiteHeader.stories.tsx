@@ -38,7 +38,7 @@ const meta = {
   argTypes: {
     activeLanguage: {
       control: "select",
-      options: ["en", "id", "ja", "zh"],
+      options: ["en", "id", "ja", "zh", "hi"],
     },
   },
   parameters: {
@@ -71,6 +71,13 @@ export const Chinese: Story = {
   args: {
     activeLanguage: "zh",
     labels: homeContent.zh.nav,
+  },
+};
+
+export const Hindi: Story = {
+  args: {
+    activeLanguage: "hi",
+    labels: homeContent.hi.nav,
   },
 };
 

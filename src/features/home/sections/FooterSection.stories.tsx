@@ -14,6 +14,7 @@ const meta = {
     currentYear: 2026,
     email: profile.email,
     githubHref: profile.githubHref,
+    linkedinHref: profile.linkedinHref,
   },
   parameters: {
     layout: "fullscreen",
@@ -34,6 +35,10 @@ export const English: Story = {
       "href",
       profile.githubHref,
     );
+    await expect(canvas.getByRole("link", { name: "LinkedIn" })).toHaveAttribute(
+      "href",
+      profile.linkedinHref,
+    );
   },
 };
 
@@ -47,4 +52,8 @@ export const Japanese: Story = {
 
 export const Chinese: Story = {
   args: { content: homeContent.zh.footer },
+};
+
+export const Hindi: Story = {
+  args: { content: homeContent.hi.footer },
 };

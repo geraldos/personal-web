@@ -19,6 +19,10 @@ describe("HomePage", () => {
 
     expect(screen.getByText("6+ Years")).toBeInTheDocument();
     expect(screen.getByText(/Geraldo.*2026/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "LinkedIn" })).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/in/geraldo-sepdwijaya/",
+    );
   });
 
   it("renders the primary proof of work entries", () => {
@@ -101,6 +105,15 @@ describe("HomePage", () => {
     expect(document.querySelector("main")).toHaveAttribute("data-language", "zh");
   });
 
+  it("uses Hindi by default for Hindi browser language", async () => {
+    mockBrowserLanguage("hi-IN");
+
+    render(createElement(HomePage, { currentDate: new Date("2026-06-18T00:00:00") }));
+
+    expect(await screen.findByRole("button", { name: "Current language: Hindi" })).toBeInTheDocument();
+    expect(document.querySelector("main")).toHaveAttribute("data-language", "hi");
+  });
+
   it("switches the page copy to Japanese", async () => {
     render(createElement(HomePage, { currentDate: new Date("2026-06-18T00:00:00") }));
 
@@ -120,6 +133,15 @@ describe("HomePage", () => {
     await userEvent.click(screen.getByRole("button", { name: "Switch language to Chinese" }));
 
     expect(screen.getByText("凌晨好，我是杰拉尔多。")).toBeInTheDocument();
+  });
+
+  it("switches the page copy to Hindi", async () => {
+    render(createElement(HomePage, { currentDate: new Date("2026-06-18T00:00:00") }));
+
+    await userEvent.click(screen.getByRole("button", { name: "Current language: English" }));
+    await userEvent.click(screen.getByRole("button", { name: "Switch language to Hindi" }));
+
+    expect(screen.getByText("नमस्ते, मैं गेराल्डो हूँ।")).toBeInTheDocument();
   });
 
   it("opens a compact navigation menu for mobile", async () => {

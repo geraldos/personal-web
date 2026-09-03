@@ -40,6 +40,7 @@ export const profile = {
   contactHref:
     "https://mail.google.com/mail/?view=cm&fs=1&to=sepdwijaya18%40gmail.com",
   githubHref: "https://github.com/geraldos",
+  linkedinHref: "https://www.linkedin.com/in/geraldo-sepdwijaya/",
   cvHref:
     "https://drive.google.com/file/d/1tVsjgISqvOS04oBys8YYPQRd2pI0d-Pn/view?usp=sharing",
   cvFileName: "geraldo-sepdwijaya-cv.md",

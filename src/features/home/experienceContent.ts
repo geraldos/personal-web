@@ -135,6 +135,36 @@ const baseExperienceContent: Record<LanguageCode, ExperienceContent> = {
       },
     ],
   },
+  hi: {
+    eyebrow: "अनुभव",
+    titleTop: "प्रोडक्शन में",
+    titleBottom: "विकसित।",
+    description: "प्रोडक्शन बैंकिंग सिस्टम, आंतरिक प्लेटफॉर्म और विचारशील फ्रंटेंड इंजीनियरिंग पर निरंतर फोकस द्वारा गढ़ा गया करियर।",
+    roles: [
+      {
+        role: "Software Engineer",
+        period: "अगस्त 2022 — वर्तमान",
+        company: "Maybank Indonesia",
+        location: "दक्षिण जकार्ता, DKI Jakarta, इंडोनेशिया",
+        highlights: [
+          "प्रोडक्शन बैंकिंग वातावरण में M2U Web नवीनीकरण विकास और रखरखाव के लिए आउटसोर्स स्क्वाड का नेतृत्व किया।",
+          "प्रोडक्शन बैंकिंग वातावरण के लिए React का उपयोग करके शुरू से बैक ऑफिस MCM (Open API प्लेटफॉर्म) का निर्माण किया।",
+          "स्केलेबल एंटरप्राइज समाधान प्रदान करते हुए फ्रंटेंड और बैकएंड पर बैक ऑफिस RDN ऑफलाइन सुविधाओं का निर्माण किया।",
+          "प्रोडक्शन में Spring Boot का उपयोग करके M2U ऐप्स के विकास और रखरखाव में योगदान दिया।",
+        ],
+      },
+      {
+        role: "Frontend Engineer",
+        period: "नवंबर 2020 — अगस्त 2022",
+        company: "PT. Traders Family International",
+        location: "उत्तरी जकार्ता, DKI Jakarta, इंडोनेशिया",
+        highlights: [
+          "उत्पाद और व्यावसायिक टीमों के लिए वेब एप्लिकेशन विकसित और रखरखाव किया।",
+          "स्वच्छ, रखरखाव योग्य कोड लिखते हुए उत्पाद और व्यावसायिक टीमों के साथ सहयोग किया।",
+        ],
+      },
+    ],
+  },
 };
 
 const reviewerExperience: Record<LanguageCode, ExperienceContent["roles"][number]> = {
@@ -182,6 +212,17 @@ const reviewerExperience: Record<LanguageCode, ExperienceContent["roles"][number
       "通过一致的代码评审，帮助学员强化现代 Web 基础与面向生产环境的 React 实践。",
     ],
   },
+  hi: {
+    role: "एक्सटर्नल कोड समीक्षक",
+    period: "सितंबर 2025 — वर्तमान",
+    company: "Dicoding Indonesia",
+    location: "रिमोट, इंडोनेशिया",
+    highlights: [
+      "Dicoding के तकनीकी मानदंडों के आधार पर Front-End Web Developer और React Developer लर्निंग पाथ में शिक्षार्थियों के सबमिशन की समीक्षा और मूल्यांकन करना।",
+      "कार्यक्षमता, कोड गुणवत्ता, पहुंच (एक्सेसिबिलिटी), परीक्षण और रखरखाव पर विशिष्ट, कार्रवाई योग्य प्रतिक्रिया प्रदान करना।",
+      "निरंतर कोड समीक्षाओं के माध्यम से शिक्षार्थियों को आधुनिक वेब बुनियादी सिद्धांतों और प्रोडक्शन-माइंडेड React प्रथाओं को मजबूत करने में मदद करना।",
+    ],
+  },
 };
 
 function insertReviewerExperience(language: LanguageCode): ExperienceContent {
@@ -198,4 +239,5 @@ export const experienceContent: Record<LanguageCode, ExperienceContent> = {
   id: insertReviewerExperience("id"),
   ja: insertReviewerExperience("ja"),
   zh: insertReviewerExperience("zh"),
+  hi: insertReviewerExperience("hi"),
 };

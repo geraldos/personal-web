@@ -37,6 +37,11 @@ export function HomePage({ currentDate = new Date() }: { currentDate?: Date }) {
       return;
     }
 
+    if (browserLanguage.startsWith("hi")) {
+      setLanguage("hi");
+      return;
+    }
+
     if (browserLanguage.startsWith("id")) {
       setLanguage("id");
     }
@@ -78,6 +83,7 @@ export function HomePage({ currentDate = new Date() }: { currentDate?: Date }) {
         currentYear={getCurrentYear(currentDate)}
         email={profile.email}
         githubHref={profile.githubHref}
+        linkedinHref={profile.linkedinHref}
       />
     </main>
   );

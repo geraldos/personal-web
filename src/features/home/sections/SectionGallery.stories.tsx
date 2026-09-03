@@ -26,6 +26,7 @@ function SectionGallery({ language }: { language: LanguageCode }) {
         currentYear={2026}
         email={profile.email}
         githubHref={profile.githubHref}
+        linkedinHref={profile.linkedinHref}
       />
     </main>
   );
@@ -40,7 +41,7 @@ const meta = {
   argTypes: {
     language: {
       control: "select",
-      options: ["en", "id", "ja", "zh"],
+      options: ["en", "id", "ja", "zh", "hi"],
     },
   },
   parameters: {
@@ -64,6 +65,10 @@ export const Japanese: Story = {
 
 export const Chinese: Story = {
   args: { language: "zh" },
+};
+
+export const Hindi: Story = {
+  args: { language: "hi" },
 };
 
 export const LightTheme: Story = {

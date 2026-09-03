@@ -1,4 +1,4 @@
-import { Github, Mail, MoveUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, MoveUpRight } from "lucide-react";
 
 import type { HomeContent } from "../homeContent";
 
@@ -8,12 +8,14 @@ export function FooterSection({
   currentYear,
   email,
   githubHref,
+  linkedinHref,
 }: {
   content: HomeContent["footer"];
   contactHref: string;
   currentYear: number;
   email: string;
   githubHref: string;
+  linkedinHref: string;
 }) {
   return (
     <footer id="contact" className="relative bg-acid px-5 pb-8 pt-24 text-paper md:px-10 md:pt-36">
@@ -49,6 +51,15 @@ export function FooterSection({
               className="transition hover:scale-125"
             >
               <Github size={20} />
+            </a>
+            <a
+              aria-label="LinkedIn"
+              href={linkedinHref}
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:scale-125"
+            >
+              <Linkedin size={20} />
             </a>
           </div>
           <div className="md:text-right">

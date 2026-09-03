@@ -31,3 +31,7 @@ export const Japanese: Story = {
 export const Chinese: Story = {
   args: { content: homeContent.zh.about },
 };
+
+export const Hindi: Story = {
+  args: { content: homeContent.hi.about },
+};

@@ -4,6 +4,7 @@ import {
   credentials,
   experienceStacks,
   professionalProof,
+  profile,
   projects,
   skills,
 } from "./homeData";
@@ -41,5 +42,14 @@ describe("technology stacks", () => {
       expect.arrayContaining(["HTML5", "CSS", "JavaScript", "React", "Webpack", "Jest", "PWA"]),
     );
     expect(credentials[1].stacks.map((stack) => stack.name)).toContain("AWS");
+  });
+});
+
+describe("profile", () => {
+  it("includes working external social links", () => {
+    expect(profile.githubHref).toBe("https://github.com/geraldos");
+    expect(profile.linkedinHref).toBe(
+      "https://www.linkedin.com/in/geraldo-sepdwijaya/",
+    );
   });
 });

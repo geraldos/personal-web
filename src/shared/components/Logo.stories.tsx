@@ -15,7 +15,7 @@ const meta = {
   argTypes: {
     language: {
       control: "select",
-      options: ["en", "id", "ja", "zh"],
+      options: ["en", "id", "ja", "zh", "hi"],
     },
   },
 } satisfies Meta<typeof Logo>;
@@ -38,4 +38,8 @@ export const Japanese: Story = {
 
 export const Chinese: Story = {
   args: { language: "zh" },
+};
+
+export const Hindi: Story = {
+  args: { language: "hi" },
 };

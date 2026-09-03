@@ -7,6 +7,7 @@ import { experienceStacks, profile, projects } from "../homeData";
 import { AboutSection } from "./AboutSection";
 import { ExperienceSection } from "./ExperienceSection";
 import { FieldNotesSection } from "./FieldNotesSection";
+import { FooterSection } from "./FooterSection";
 import { ProcessSection } from "./ProcessSection";
 import { ResumeSection } from "./ResumeSection";
 import { WorkSection } from "./WorkSection";
@@ -110,5 +111,29 @@ describe("home sections", () => {
         expect(within(section!).getByText(tag)).toBeInTheDocument();
       }
     });
+  });
+
+  it("renders the footer contacts and external social links", () => {
+    const content = homeContent.en.footer;
+    render(
+      <FooterSection
+        content={content}
+        contactHref={profile.contactHref}
+        currentYear={2026}
+        email={profile.email}
+        githubHref={profile.githubHref}
+        linkedinHref={profile.linkedinHref}
+      />,
+    );
+
+    const githubLink = screen.getByRole("link", { name: "GitHub" });
+    expect(githubLink).toHaveAttribute("href", profile.githubHref);
+    expect(githubLink).toHaveAttribute("target", "_blank");
+    expect(githubLink).toHaveAttribute("rel", "noreferrer");
+
+    const linkedinLink = screen.getByRole("link", { name: "LinkedIn" });
+    expect(linkedinLink).toHaveAttribute("href", profile.linkedinHref);
+    expect(linkedinLink).toHaveAttribute("target", "_blank");
+    expect(linkedinLink).toHaveAttribute("rel", "noreferrer");
   });
 });

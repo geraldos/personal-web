@@ -3,6 +3,7 @@ const localizedIdentity = {
   id: { name: "Geraldo", role: "Full-stack Engineer" },
   ja: { name: "ジェラルド", role: "フルスタックエンジニア" },
   zh: { name: "杰拉尔多", role: "全栈工程师" },
+  hi: { name: "गेराल्डो", role: "फुल-स्टैक इंजीनियर" },
 } as const;
 
 export function Logo({ language = "en" }: { language?: keyof typeof localizedIdentity }) {

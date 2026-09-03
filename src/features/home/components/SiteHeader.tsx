@@ -41,6 +41,18 @@ function FlagIcon({ language }: { language: LanguageCode }) {
     );
   }
 
+  if (language === "hi") {
+    return (
+      <svg viewBox="0 0 24 16" className="h-4 w-6 overflow-hidden rounded-[2px]" aria-hidden="true">
+        <rect width="24" height="5.33" fill="#ff9933" />
+        <rect y="5.33" width="24" height="5.34" fill="#f8fafc" />
+        <rect y="10.67" width="24" height="5.33" fill="#138808" />
+        <circle cx="12" cy="8" r="2" fill="none" stroke="#000080" strokeWidth="0.8" />
+        <circle cx="12" cy="8" r="0.4" fill="#000080" />
+      </svg>
+    );
+  }
+
   return (
     <svg viewBox="0 0 24 16" className="h-4 w-6 overflow-hidden rounded-[2px]" aria-hidden="true">
       <rect width="24" height="16" fill="#1d4ed8" />
@@ -88,6 +100,7 @@ export function SiteHeader({
     id: "Pengalaman",
     ja: "職務経歴",
     zh: "工作经历",
+    hi: "कार्य अनुभव",
   }[activeLanguage];
 
   return (
@@ -148,23 +161,23 @@ export function SiteHeader({
               aria-label="Select language"
             >
               {languages.map((language) => (
-              <button
-                key={language.code}
-                type="button"
-                aria-label={`Switch language to ${language.name}`}
-                title={language.name}
-                onClick={() => {
-                  onLanguageChange(language.code);
-                  setIsLanguageOpen(false);
-                }}
-                className={`flex h-9 w-11 items-center justify-center rounded-xl transition ${
-                  activeLanguage === language.code
-                    ? "bg-acid"
-                    : "text-paper/50 hover:bg-paper/10"
-                }`}
-              >
-                <FlagIcon language={language.code} />
-              </button>
+                <button
+                  key={language.code}
+                  type="button"
+                  aria-label={`Switch language to ${language.name}`}
+                  title={language.name}
+                  onClick={() => {
+                    onLanguageChange(language.code);
+                    setIsLanguageOpen(false);
+                  }}
+                  className={`flex h-9 w-11 items-center justify-center rounded-xl transition ${
+                    activeLanguage === language.code
+                      ? "bg-acid"
+                      : "text-paper/50 hover:bg-paper/10"
+                  }`}
+                >
+                  <FlagIcon language={language.code} />
+                </button>
               ))}
             </div>
           </div>
@@ -220,7 +233,7 @@ export function SiteHeader({
             <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-paper/55">
               {labels.language}
             </p>
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-5 gap-2">
               {languages.map((language) => (
                 <button
                   key={language.code}

@@ -28,5 +28,6 @@ describe("getLocalizedGreeting", () => {
   it("keeps the original greeting for languages without a time-aware greeting", () => {
     expect(getLocalizedGreeting("en", new Date("2026-06-18T14:00:00"))).toBeNull();
     expect(getLocalizedGreeting("id", new Date("2026-06-18T14:00:00"))).toBeNull();
+    expect(getLocalizedGreeting("hi", new Date("2026-06-18T14:00:00"))).toBeNull();
   });
 });

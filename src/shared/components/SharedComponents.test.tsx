@@ -14,11 +14,16 @@ const stacks: StackItem[] = [
 
 describe("shared presentation components", () => {
   it("localizes the visible identity while keeping a stable home label", () => {
-    render(<Logo language="ja" />);
+    const { unmount } = render(<Logo language="ja" />);
 
     expect(screen.getByRole("link", { name: "Geraldo home" })).toHaveAttribute("href", "#top");
     expect(screen.getByText("ジェラルド")).toBeInTheDocument();
     expect(screen.getByText("フルスタックエンジニア")).toBeInTheDocument();
+
+    unmount();
+    render(<Logo language="hi" />);
+    expect(screen.getByText("गेराल्डो")).toBeInTheDocument();
+    expect(screen.getByText("फुल-स्टैक इंजीनियर")).toBeInTheDocument();
   });
 
   it("renders every technology in a stack", () => {
