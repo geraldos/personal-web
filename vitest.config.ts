@@ -8,7 +8,7 @@ export default defineConfig({
       provider: "v8",
       reporter: ["text", "html"],
       include: ["app/**/*.{ts,tsx}", "src/**/*.{ts,tsx}"],
-      exclude: ["**/*.stories.{ts,tsx}", "**/*.test.{ts,tsx}", "**/*.d.ts"],
+      exclude: ["**/*.stories.{ts,tsx}", "**/*.test.{ts,tsx}", "**/*.d.ts", ".stryker-tmp/**"],
       thresholds: {
         lines: 80,
         functions: 80,

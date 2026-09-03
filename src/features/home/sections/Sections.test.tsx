@@ -17,7 +17,7 @@ describe("home sections", () => {
     const content = homeContent.en.about;
     render(<AboutSection content={content} />);
 
-    const section = document.querySelector("#about");
+    const section = document.querySelector<HTMLElement>("#about");
     expect(section).toBeInTheDocument();
     expect(within(section!).getByRole("heading", { name: `${content.titleTop}${content.titleBottom}` })).toBeInTheDocument();
     for (const paragraph of content.paragraphs) {
@@ -34,7 +34,7 @@ describe("home sections", () => {
     const content = experienceContent.en;
     render(<ExperienceSection content={content} />);
 
-    const section = document.querySelector("#experience");
+    const section = document.querySelector<HTMLElement>("#experience");
     expect(section).toBeInTheDocument();
     const roleCards = within(section!).getAllByRole("article");
     content.roles.forEach((role, index) => {
@@ -55,7 +55,7 @@ describe("home sections", () => {
     const content = homeContent.en.fieldNotes;
     render(<FieldNotesSection content={content} />);
 
-    const section = document.querySelector("#field-notes");
+    const section = document.querySelector<HTMLElement>("#field-notes");
     expect(section).toBeInTheDocument();
     for (const note of content.notes) {
       expect(within(section!).getByRole("heading", { name: note.title })).toBeInTheDocument();
@@ -101,7 +101,7 @@ describe("home sections", () => {
     const content = homeContent.en.work;
     render(<WorkSection content={content} />);
 
-    const section = document.querySelector("#work");
+    const section = document.querySelector<HTMLElement>("#work");
     expect(section).toBeInTheDocument();
     content.projects.forEach((project, index) => {
       expect(within(section!).getByRole("heading", { name: project.title })).toBeInTheDocument();
